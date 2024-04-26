@@ -9,11 +9,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("api/v1/students")
 public class StudentController {
 
     @GetMapping(path = "studentId")
-    public StudentController getStudent(@PathVariable("studentId") studentId){
+    public Student getStudent(@PathVariable("studentId")  Integer studentId){
 
     }
 
