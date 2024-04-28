@@ -16,9 +16,12 @@ public class StudentController {
         new Student(2,"Rop")
     );
 
-    @GetMapping(path = "studentId")
+    @GetMapping(path = "{studentId}")
     public Student getStudent(@PathVariable("studentId")  Integer studentId){
-
+return STUDENTS.stream()
+        .filter(student -> studentId.equals(student.getStudentId()))
+        .findFirst()
+        .orElseThrow(()->new IllegalStateException("Student"+studentId+"does not much"))
     }
 
 }
