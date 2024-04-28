@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/students")
+@RequestMapping("api")
 public class StudentController {
     private  static final List<Student> STUDENTS=Arrays.asList(
         new Student(1,"Faith"),
@@ -21,7 +21,7 @@ public class StudentController {
 return STUDENTS.stream()
         .filter(student -> studentId.equals(student.getStudentId()))
         .findFirst()
-        .orElseThrow(()->new IllegalStateException("Student"+studentId+"does not much"))
+        .orElseThrow(()->new IllegalStateException("Student"+studentId+"does not much"));
     }
 
 }
